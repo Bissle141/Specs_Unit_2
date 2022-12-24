@@ -16,11 +16,34 @@
 </head>
 <body>
     <nav id="navbar">
-        <a href="./">Home</a>
-        <h1>Downtown Cupcakes</h1>
-        <a href="./order">Cart</a>
+        <img src="https://cdn-icons-png.flaticon.com/512/3726/3726102.png" alt="cupcake">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/order">Cart</a>
     </nav>
 
+
+    <section id="menu">
+
+        <ul id="items-list">
+            <div id="header">
+                <p> Cupcake Name </p>   <p> Price </p>
+            </div>
+            {% for cupcake in cupcakes %}
+                <li>
+                    <a href="{{ url_for('menu_single', name=cupcake['name']) }}">
+                        <div class="item">
+                            <p> {{cupcake['name']}} </p> <p> {{cupcake['price']}} </p>
+                        </div>
+                    </a>
+                    <button value="{{cupcake['name']}}">
+                        <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">Add</a>
+                    </button>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </section>
 
 </body>
 </html>

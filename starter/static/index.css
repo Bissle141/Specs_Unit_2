@@ -1,5 +1,8 @@
 body {
     background-color: #F3F6FB;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
 }
 
 #navbar {
@@ -15,14 +18,136 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
-h1, a{
+h1, nav > a{
     color: #F3F6FB;
     text-decoration: none;
     font-size: 2em;
     font-family: 'Playfair Display', serif;
+}
+
+nav > img {
+    height: 80px;
+    
+    position: absolute;
+    left: 3%;
+}
+
+a {
+    text-decoration: none;
+}
+
+p, button{
+    color: #F3F6FB;
+    font-size: 1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    margin: 20px;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+#quantity-sect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+li > button, button > a{
+    align-self: center;
+    background-color: #bcbdbf;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    
+    text-decoration: none;
+    color: #F3F6FB;
+}
+
+li > button:hover, button:hover > a{
+    background-color: #a2a3a4;
+    text-decoration: none;
+    color: #F3F6FB;
+}
+
+#items-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item, #header, .bot-header, .order-item {
+    background-color: #DDB7CF;
+    
+    width: 80vw;
+    margin: 10px;
+    padding: 10px 40px 10px 40px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 30px;
+}
+
+#header, .bot-header{
+    background-color: transparent;
+}
+
+#header > p, #header > p > a, .bot-header > p{
+    color: black;
+    font-weight: 600;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+#single_cupcake {
+    background-color: #DDB7CF;
+    padding: 20px;
+    width: 70vw;
+    
+    align-self: center;
+    border-radius: 30px;
+}
+
+#single_cupcake > h2{
+    margin: 10px 0px 10px 0px;
+    color: #F3F6FB;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+#single_cupcake > h3, #single_cupcake > ul > li {
+    margin: 10px 0px 10px 0px;
+    color: #F3F6FB;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+#single_cupcake > ul > li {
+    margin-left: 20px;
+}
+
+.item:hover {
+    background-color: #bd9eb2;
 }
 
 a:hover {

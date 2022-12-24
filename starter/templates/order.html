@@ -16,10 +16,37 @@
 
 <body>
     <nav id="navbar">
-        <a href="./">Home</a>
-        <h1>Downtown Cupcakes</h1>
-        <a href="./menu">Menu</a>
+        <img src="https://cdn-icons-png.flaticon.com/512/3726/3726102.png" alt="cupcake">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/order">Cart</a>
     </nav>
+
+
+    <div id="header">
+        <p> Order </p>
+    </div>
+    <ul id="items-list">
+        {% for cupcake in order %}
+            <li>
+                <div class="order-item">
+                    <p> {{cupcake['name']}} </p> <p> {{cupcake['price']}} </p> 
+                    <section id="quantity-sect">
+                        <button><a href="{{ url_for('add_quantity', name=cupcake['name']) }}">↑</a></button>
+                        <p> {{cupcake['quantity']}} </p> 
+                        <button><a href="{{ url_for('minus_quantity', name=cupcake['name']) }}">↓</a></button>
+                    </section>
+                </div>
+                <button>
+                    <a href="{{ url_for('delete_cupcake', name=cupcake['name']) }}">X</a>
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="bot-header">
+        <p>Total : {{total}}</p>
+    </div>
 
 
 </body>
